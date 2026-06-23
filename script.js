@@ -182,7 +182,11 @@ if (form) {
   form.addEventListener('submit', async function (e) {
     e.preventDefault();
 
+    const checkbox = document.querySelector('.block10-checkbox');
+    const attendance = checkbox.checked ? 'Приду' : 'Не приду';
+
     const formData = new FormData(form);
+    formData.append('attendance', attendance);
 
     try {
       await fetch('https://api.web3forms.com/submit', {
@@ -196,6 +200,8 @@ if (form) {
     }
   });
 }
+
+
 
 // БЛОК 11
 
