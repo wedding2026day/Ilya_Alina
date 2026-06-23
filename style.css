@@ -1,0 +1,909 @@
+@font-face {
+  font-family: 'GentlemensScript';
+  src: url('font/GentlemensScript-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ru_Courier10';
+  src: url('font/ofont.ru_Courier10 Win95BT.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+
+/* Общие сбросы и базовые настройки для мобильной версии */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #ffffff;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* для особо кривых браузеров/устройств */
+@supports (height: 100dvh) {
+  .hero {
+    height: 100dvh;
+  }
+}
+
+/* БЛОК 2 */
+
+.block2{
+width:100%;
+}
+
+/* верхняя картинка */
+.block2-top{
+display:block;
+margin:10px auto; /* центр по горизонтали */
+max-width:80%; /* уменьшаем ширину (можешь менять) */
+height:auto;
+}
+
+/* нижняя картинка + текст */
+.block2-bottom-wrap{
+position:relative;
+width:100%;
+}
+
+/* картинка 4 */
+.block2-img{
+width:100%;
+display:block;
+
+opacity:0;
+animation:fadeInImg 1.2s ease forwards;
+}
+
+/* текст поверх */
+.block2-text{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+transform:translate(-50%, -50%);
+display:flex;
+flex-direction:column;
+align-items:center;
+font-family: 'GentlemensScript', cursive;
+}
+
+/* строки текста */
+.line{
+position: absolute;
+color:#000000;
+font-size:28pt;
+opacity:0;
+transform:translateY(20px);
+}
+
+/* анимация по очереди */
+.line1{
+animation:fadeText 0.8s ease forwards;
+animation-delay:1.2s;
+top:  65%;                /* вверх / вниз — основной контроль */
+right: 21%;                /* ← центр по горизонтали */
+}
+
+.line2{
+animation:fadeText 0.8s ease forwards;
+animation-delay:1.8s;
+top:  85%;                /* вверх / вниз — основной контроль */
+right: 27%;     
+}
+
+.line3{
+animation:fadeText 0.8s ease forwards;
+animation-delay:2.4s;
+top:  102%;                /* вверх / вниз — основной контроль */
+right: 20%;     
+}
+
+/* keyframes */
+@keyframes fadeInImg{
+to{
+opacity:1;
+}
+}
+
+@keyframes fadeText{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* БЛОК 3 */
+
+.block3{
+width:100%;
+}
+
+/* верхняя часть */
+.block3-top-wrap{
+position:relative;
+width:100%;
+}
+
+/* фото 5 */
+.block3-img{
+width:100%;
+display:block;
+}
+
+/* текст поверх */
+.block3-text{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+font-family: 'GentlemensScript', cursive;
+}
+
+/* строки */
+.block3 .line{
+position:absolute;
+color:#000000;
+font-size:28pt;
+opacity:0;
+transform:translateY(20px);
+}
+
+/* позиции (можешь менять как хочешь) */
+/* БЛОК 3 — задержка после блока 2 */
+
+.block3 .line1{
+top:16%;
+left:10%;
+animation:fadeText 0.8s ease forwards;
+animation-delay:3.3s; /* позже блока 2 */
+}
+
+.block3 .line2{
+top:42%;
+left:10%;
+animation:fadeText 0.8s ease forwards;
+animation-delay:3.9s;
+}
+
+.block3 .line3{
+top:65%;
+left:8%;
+animation:fadeText 0.8s ease forwards;
+animation-delay:4.5s;
+}
+
+/* нижняя картинка */
+.block3-bottom{
+width:100%;
+
+display:block;
+
+}
+
+/* БЛОК 4 */
+
+.block4{
+width:100%;
+overflow:hidden;
+}
+
+/* верхняя картинка */
+.block4-top-wrap{
+position:relative;
+width:100%;
+}
+
+.block4-img{
+width:100%;
+display:block;
+}
+
+/* текст поверх фото 7 */
+.block4-text{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
+/* скрыто по умолчанию */
+/* БЛОК 4 */
+
+/* БЛОК 4 */
+
+.block4{
+width:100%;
+overflow:hidden;
+}
+
+/* верхняя картинка */
+.block4-top-wrap{
+position:relative;
+width:100%;
+}
+
+.block4-img{
+width:100%;
+display:block;
+}
+
+/* текст поверх */
+.block4-text{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
+/* строки текста */
+.block4-line{
+position:absolute;
+color:#000000;
+font-size:28pt;
+font-family: 'GentlemensScript', cursive;
+opacity:0;
+transform:translateY(30px);
+}
+
+/* позиции */
+.block4-line1{
+top:53%;
+left:57%;
+font-size: 20pt;
+}
+
+.block4-line2{
+top:53%;
+left:73%;
+font-size: 20pt;
+}
+
+/* активное состояние */
+.block4.show .block4-line{
+animation:fadeUp 0.8s ease forwards;
+}
+
+.block4.show .block4-line1{
+animation-delay:0.2s;
+}
+
+.block4.show .block4-line2{
+animation-delay:0.6s;
+}
+
+/* нижняя картинка */
+.block4-bottom{
+width:100%;
+display:block;
+
+opacity:0;
+transform:translateX(100%);
+}
+
+/* появление картинки */
+.block4.show .block4-bottom{
+animation:slideIn 1s ease forwards;
+animation-delay:1s;
+}
+
+/* анимации */
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes slideIn{
+to{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+/* БЛОК 5 */
+
+.block5{
+width:100%;
+overflow:hidden;
+}
+
+.block5-wrap{
+position:relative;
+width:100%;
+}
+
+.block5-img{
+width:100%;
+display:block;
+}
+
+/* текст */
+.block5-text{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* строка */
+.block5-line{
+position:absolute;
+font-family:'GentlemensScript', cursive;
+font-size:15pt;
+color:#000000;
+opacity:0;
+transform:translateY(30px);
+top: 25%;
+}
+
+/* появление */
+.block5.show .block5-line{
+animation:fadeUp 0.8s ease forwards;
+}
+
+/* анимация */
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* БЛОК 6 */
+
+/* БЛОК 6 */
+
+.block6{
+width:100%;
+overflow:hidden;
+position:relative;
+}
+
+/* верхняя картинка */
+.block6-img{
+width:100%;
+display:block;
+}
+
+.block6-bottom{
+position:relative;
+width:50%;
+
+left:60%; /* ставим по центру */
+transform:translateX(100%); /* старт справа */
+
+opacity:0;
+}
+
+/* появление */
+.block6.show .block6-bottom{
+animation:slideCenter 1s ease forwards;
+}
+
+@keyframes slideCenter{
+to{
+opacity:1;
+transform:translateX(-50%); /* ИДЕАЛЬНЫЙ центр */
+}
+}
+
+/* БЛОК 7 */
+
+.block7{
+width:100%;
+overflow:hidden;
+}
+
+/* верхняя картинка */
+.block7-img{
+width:100%;
+display:block;
+}
+
+/* нижняя картинка */
+.block7-bottom{
+position:relative;
+width:100%;
+
+left:50%;
+transform:translateX(-150%); /* старт СЛЕВА */
+
+opacity:0;
+}
+
+/* появление */
+.block7.show .block7-bottom{
+animation:slideFromLeft 1s ease forwards;
+}
+
+/* анимация */
+@keyframes slideFromLeft{
+to{
+opacity:1;
+transform:translateX(-50%); /* центр */
+}
+}
+
+/* БЛОК 8 */
+
+.block8{
+width:100%;
+overflow:hidden;
+}
+
+/* верхняя */
+.block8-img{
+width:100%;
+display:block;
+}
+
+/* ряд с двумя картинками */
+.block8-row{
+position:relative;
+display:flex;
+justify-content:center;
+align-items:center;
+margin-top:20px;
+}
+
+/* общие стили */
+.block8-left,
+.block8-right{
+width:50%;
+position:relative;
+opacity:0;
+}
+
+/* левая — вылетает слева */
+.block8-left{
+transform:translateX(-150%);
+}
+
+/* правая — вылетает справа */
+.block8-right{
+transform:translateX(150%);
+}
+
+/* появление одновременно */
+.block8.show .block8-left{
+animation:slideLeft 1s ease forwards;
+}
+
+.block8.show .block8-right{
+animation:slideRight 1s ease forwards;
+}
+
+/* нижняя картинка */
+.block8-bottom{
+width:100%;
+display:block;
+margin-top:20px;
+}
+
+/* анимации */
+@keyframes slideLeft{
+to{
+transform:translateX(0);
+opacity:1;
+}
+}
+
+@keyframes slideRight{
+to{
+transform:translateX(0);
+opacity:1;
+}
+}
+
+/* БЛОК 9 */
+
+.block9{
+width:100%;
+}
+
+.block9-img{
+width:100%;
+display:block;
+}
+
+/* БЛОК 10 */
+
+.block10{
+width:100%;
+overflow:hidden;
+}
+
+/* верхняя картинка */
+.block10-top-wrap{
+position:relative;
+width:100%;
+}
+
+.block10-img{
+width:100%;
+display:block;
+}
+
+/* текст поверх */
+.block10-text{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+}
+
+/* строки */
+.block10-line{
+position:absolute;
+color:#000000;
+font-size:28pt;
+opacity:0;
+font-family: 'GentlemensScript', cursive;
+transform:translateY(20px);
+}
+
+/* положение текста */
+.block10-line1{
+top:68%;
+left:17%;
+font-size: 20pt;
+}
+
+.block10-line2{
+top:68%;
+left:29%;
+font-size: 20pt;
+}
+
+/* появление как в предыдущих блоках */
+.block10.show .block10-line1{
+animation:fadeText 0.8s ease forwards;
+animation-delay:0.2s;
+}
+
+.block10.show .block10-line2{
+animation:fadeText 0.8s ease forwards;
+animation-delay:0.8s;
+}
+
+@keyframes fadeText{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* форма */
+.block10-form{
+width:100%;
+padding:20px;
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+}
+
+/* поле ввода */
+.block10-input{
+width:90%;
+padding:12px 0;
+border:none;
+border-bottom:1px solid #000;
+outline:none;
+background:transparent;
+font-size:16px;
+}
+
+/* строка с чекбоксом и картинкой */
+/* строка с чекбоксом и текстом-картинкой */
+.block10-check-row{
+width:90%;
+display:flex;
+align-items:flex-start;
+gap:8px;
+}
+
+/* чекбокс */
+.block10-checkbox{
+margin-top:80px;   /* двигай выше/ниже */
+margin-left:0;    /* двигай левее/правее через margin */
+width:18px;
+height:18px;
+flex:0 0 18px;
+}
+
+/* картинка-текст */
+.block10-check-img{
+display:block;
+width:calc(100% - 26px);
+height:auto;
+}
+
+
+
+/* картинка справа от чекбокса */
+
+
+/* кнопка-картинка */
+.block10-submit{
+border:none;
+background:transparent;
+padding:0;
+cursor:pointer;
+}
+
+.block10-submit img{
+display:block;
+width:180px;
+max-width:100%;
+height:auto;
+}
+
+
+/* алкоголь */
+
+.block10-alcohol{
+  width:90%;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.block10-alcohol-title{
+  color:#000;
+  font-size:15px;
+  font-family: 'ru_Courier10';
+  text-align:left;
+}
+
+.block10-alcohol-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:#000;
+  font-family: 'ru_Courier10';
+  font-size:16px;
+}
+
+.block10-alcohol-row input[type="checkbox"]{
+  width:18px;
+  height:18px;
+}
+
+/* БЛОК 11_1 */
+
+.block11_1{
+width:100%;
+overflow:hidden;
+position:relative;
+}
+
+/* верхняя картинка */
+.block11_1-img{
+width:100%;
+display:block;
+}
+
+/* БЛОК 11 */
+
+.block11{
+width:100%;
+overflow:hidden;
+position:relative;
+}
+
+/* верхняя картинка */
+.block11-img{
+width:100%;
+display:block;
+}
+
+/* зона с 23 и 24 */
+.block11-stage{
+position:relative;
+width:100%;
+height:260px; /* можешь менять */
+overflow:hidden;
+}
+
+/* фото 23 */
+.block11-photo23{
+position:absolute;
+left:55%;
+top:40px;
+width:50%;
+opacity:0;
+transform:rotate(0deg) translate(0, 0);
+z-index: 10;
+}
+
+/* фото 24 */
+.block11-photo24{
+position:absolute;
+left:50%;
+top:50%;
+width:42%;
+opacity:0;
+transform:translate(-50%, -50%) scale(0.8);
+}
+
+/* фото 25 */
+.block11-photo25{
+display:block;
+width:60%;
+opacity:0;
+transform:translateX(100%);
+}
+
+
+.countdown{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  padding:20px 10px 30px;
+  flex-wrap:wrap;
+}
+
+.countdown-item{
+  min-width:70px;
+  text-align:center;
+}
+
+.countdown-item span{
+  display:block;
+  font-family:'ru_Courier10';
+  font-size:28px;
+  color:#000;
+  font-weight:700;
+}
+
+.countdown-item small{
+  display:block;
+  margin-top:4px;
+  font-family:'ru_Courier10';
+  font-size:12px;
+  color:#000;
+}
+
+
+/* запуск анимаций */
+.block11.show .block11-photo23{
+animation:block11Photo23 1.8s ease forwards;
+}
+
+.block11.show .block11-photo24{
+animation:block11Photo24 0.8s ease forwards;
+animation-delay:1.1s;
+}
+
+.block11.show .block11-photo25{
+animation:block11Photo25 4s ease-in-out forwards;
+animation-delay:1.6s;
+}
+
+/* анимация фото 23:
+   появилось справа, наклонилось влево,
+   потом поднялось вверх вправо */
+@keyframes block11Photo23{
+0%{
+opacity:0;
+transform:rotate(0deg) translate(80px, 0);
+}
+20%{
+opacity:1;
+transform:rotate(0deg) translate(0, 0);
+}
+55%{
+opacity:1;
+transform:rotate(-20deg) translate(-10px, 0);
+}
+100%{
+opacity:1;
+transform:rotate(50deg) translate(20px, -35px);
+}
+}
+
+/* фото 24 появляется по центру */
+@keyframes block11Photo24{
+0%{
+opacity:0;
+transform:translate(-50%, -50%) scale(0.8);
+}
+100%{
+opacity:1;
+transform:translate(-50%, -50%) scale(1);
+}
+}
+
+/* фото 25 едет справа налево */
+@keyframes block11Photo25{
+0%{
+opacity:1;
+transform:translateX(100%);
+}
+100%{
+opacity:1;
+transform:translateX(0);
+}
+}
+
+/* БЛОК 1: стартовый экран */
+
+.start-screen{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background:#fff;
+z-index:9999;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+align-items:center;
+overflow:hidden;
+}
+
+.start-screen-img{
+position: absolute;
+width:100%;
+top: 20px;
+height:auto;
+display:block;
+}
+
+.start-screen-btn{
+position:absolute;
+left:50%;
+top:450px;
+transform:translateX(-50%);
+border:none;
+background:transparent;
+padding:0;
+cursor:pointer;
+}
+
+.start-screen-btn img{
+display:block;
+width:180px;
+max-width:70vw;
+height:auto;
+}
+
+/* весь остальной сайт скрыт до нажатия */
+.site-content{
+display:none;
+}
+
+/* после открытия */
+.site-content.show{
+display:block;
+}
+
+/* плавное исчезновение стартового экрана */
+.start-screen.hide{
+opacity:0;
+visibility:hidden;
+transition:opacity 0.8s ease, visibility 0s linear 0.8s;
+}
